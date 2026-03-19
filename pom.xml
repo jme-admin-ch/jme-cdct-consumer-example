@@ -29,7 +29,7 @@
     <parent>
         <groupId>ch.admin.bit.jeap</groupId>
         <artifactId>jeap-spring-boot-parent</artifactId>
-        <version>31.2.0</version>
+        <version>31.3.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -37,11 +37,12 @@
         <java.version>25</java.version>
         <maven.compiler.release>25</maven.compiler.release>
         <maven.javadoc.skip>false</maven.javadoc.skip>
+        <jme-spring-boot-integration-test.version>1.0.0</jme-spring-boot-integration-test.version>
     </properties>
 
     <groupId>ch.admin.bit.jeap</groupId> <!-- GroupId is necessary for RHOS sca-check-->
     <artifactId>jme-cdct-consumer-example</artifactId>
-    <version>2.2.0-SNAPSHOT</version>
+    <version>2.2.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -83,6 +84,12 @@
             <artifactId>junit5</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>ch.admin.bit.jeap.jme</groupId>
+            <artifactId>jme-spring-boot-integration-test</artifactId>
+            <version>${jme-spring-boot-integration-test.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -98,6 +105,14 @@
                                 <Bundle-License>https://www.apache.org/licenses/LICENSE-2.0</Bundle-License>
                             </manifestEntries>
                         </archive>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <configuration>
+                        <doclint>none</doclint>
+                        <quiet>true</quiet>
                     </configuration>
                 </plugin>
             </plugins>
