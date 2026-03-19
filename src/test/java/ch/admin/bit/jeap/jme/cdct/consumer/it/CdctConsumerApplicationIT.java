@@ -16,8 +16,8 @@ import static ch.admin.bit.jeap.jme.test.BootServiceIntegrationTestBase.TestProf
  * For an example of how to implement a CDC Consumer Test, see TaskClientConsumerPactTest.
  */
 @SpringBootTest(classes = ConsumerApplication.class, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
-@ActiveProfiles(resolver = CdctExampleIT.TestProfileResolver.class, inheritProfiles = false)
-public class CdctExampleIT extends BootServiceSpringIntegrationTestBase {
+@ActiveProfiles(resolver = CdctConsumerApplicationIT.TestProfileResolver.class, inheritProfiles = false)
+public class CdctConsumerApplicationIT extends BootServiceSpringIntegrationTestBase {
 
     private static final String HEALTH_URL = "http://localhost:8081/jme-cdct-consumer-service/actuator/health/readiness";
 

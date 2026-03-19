@@ -8,6 +8,6 @@ spring:
       skip:
         in-tests: false
       arguments:
-        - "--project-name=${COMPOSE_PROJECT_NAME:jme-pcs-it}"
+        - "--project-name=${COMPOSE_PROJECT_NAME:jme-cdct-consumer}"
       readiness:
         timeout: 60s
